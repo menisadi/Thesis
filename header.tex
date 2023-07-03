@@ -1,0 +1,232 @@
+\usepackage[margin=1in]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{datetime}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage[skip=10pt plus1pt]{parskip}
+\usepackage{titlesec}
+\usepackage[inline]{enumitem}
+\usepackage{setspace}
+\usepackage{soul}
+
+\titleformat{\chapter}[display]{\bfseries\centering}{\huge Chapter \thechapter}{1em}{\Huge}
+
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{amssymb,amsthm}
+\usepackage{mathtools} 
+\usepackage{bbm}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[inline]{enumitem}
+\usepackage[round]{natbib}
+\usepackage{color}
+\usepackage[indentfirst=false,rightmargin=0pt]{quoting}
+
+\newcommand{\mynote}[2]{{\textcolor{#1}{ #2}}}
+\newcommand{\unote}[1]{\noindent\mynote{red}{\bf\em Uri:}  \mynote{blue}{{#1}} }
+
+\newcommand{\absqs}[1]{
+\begin{quoting}
+\textbf{Question:} \emph{#1}
+\end{quoting}}
+
+
+
+
+\newcommand{\anote}[1]{}
+\newcommand{\mnote}[1]{}
+
+\newcommand{\udone}[1]{}
+\newcommand{\adone}[1]{}
+\newcommand{\mdone}[1]{}
+
+\newcommand{\uold}[1]{}
+\newcommand{\aold}[1]{}
+\newcommand{\mold}[1]{}
+
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{question}[section]{Question}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}{Example}
+\newtheorem{myremark}[theorem]{Remark}
+\newenvironment{innerproof}
+ {\renewcommand{\qedsymbol}{}\proof}
+ {\endproof}
+ 
+\newcommand{\algname}[1]{\texttt{#1}}
+\newcommand{\cn}{ \textcolor{red}{[citation needed] }}
+\newcommand{\rn}{\textcolor{red}{[reference] }}
+\newcommand{\bigO}[1]{\mathcal{O}\left(#1\right)}
+\newcommand{\tildeO}[1]{\widetilde{\mathcal{O}}\left(#1\right)}
+\newcommand{\mechanism}{\mathcal{M}}
+\newcommand{\outcomes}{F}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\domain}{\mathcal{X}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+
+\newcommand{\ind}{\mathbb{I}}
+\newcommand{\class}{\mathcal{C}}
+\newcommand{\calA}{\mathcal{A}}
+
+\newcommand{\adv}{\gamma}
+\newcommand{\dev}{\eta}
+\newcommand{\tlearn}{T_{\calA}}
+\newcommand{\teval}{T_{\calE}}
+\newcommand{\paren}[1]{\left( #1 \right)}
+
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\MSE}{\mathrm{MSE}} 
+\newcommand{\MAE}{\mathrm{MAE}} 
+\newcommand{\ARE}{\mathrm{ARE}} 
+\newcommand{\se}{\mathrm{se}} 
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calE}{\mathcal{E}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calG}{\mathcal{G}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calI}{\mathcal{I}}
+\newcommand{\calK}{\mathcal{K}}
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calV}{\mathcal{V}}
+\newcommand{\calW}{\mathcal{W}}
+\newcommand{\calX}{\mathcal{X}}
+\newcommand{\calY}{\mathcal{Y}}
+\newcommand{\Y}{\mathcal{Y}}
+\newcommand{\K}{\mathcal{K}}
+\renewcommand{\H}{\mathcal{H}}
+\newcommand{\calZ}{\mathcal{Z}}
+\newcommand{\tha}{\theta}
+\newcommand{\uf}[1]{\frac{1}{#1}}
+\newcommand{\Med}{Med}
+\newcommand{\Median}{Median}
+\newcommand{\bxi}{\boldsymbol{\xi}}
+\newcommand{\nrm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\Cat}{Cat}
+\newcommand{\ceil}[1]{\ensuremath{\left\lceil#1\right\rceil}}
+\newcommand{\floor}[1]{\ensuremath{\left\lfloor#1\right\rfloor}}
+\newcommand{\ontop}[2]{\overset{{\scriptsize #1}}{#2}}
+\newcommand{\adversary}{\mathbb{A}}
+\newcommand{\measure}{\mu}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathop{\mathbb{E}}}
+\newcommand{\mixing}{\psi}
+\newcommand{\tv}[2]{\left\lVert#1 - #2\right\rVert_{\textup{\tiny\textsf{TV}}}}
+\newcommand{\tvleft}{\Vert}
+\newcommand{\tvright}{{\Vert}_{\textup{\tiny\textsf{TV}}}}
+\newcommand{\mean}[1]{\mathop{\mathbb{E}}_{#1}}
+\newcommand{\bernulli}[1]{{\rm Ber}\left(#1\right)}
+\newcommand{\dobrushin}{D}
+\newcommand{\uniform}[1]{U\left(#1\right)}
+\newcommand{\seed}{x^*}
+\newcommand{\histo}{\mathcal{H}}
+\newcommand{\histSample}{\histo_S}
+\newcommand{\analyst}{\mathcal{A}}
+\newcommand{\game}{AG}
+\newcommand{\potential}{g}
+\newcommand{\MCT}{\mathbb{T}}
+\newcommand{\symmix}[2]{\gamma_{#1}^{#2}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\alg}{\mathcal{A}}
+\newcommand{\IPalg}{\mathcal{B}}
+\newcommand{\GS}[1]{GS(#1)}
+\newcommand{\Norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\norm}[1]{\Vert #1 \Vert}
+\newcommand{\sample}{S}
+\newcommand{\unlabeled}{U}
+\newcommand{\realcount}[1]{count_{#1}}
+\newcommand{\dpcount}{\hat{c}}
+\newcommand{\dplabels}{\hat{y}}
+\newcommand{\partition}{\mathcal{C}}
+\newcommand{\arbitrarilysmall}{\tau}
+\newcommand{\support}{T}
+\newcommand{\supportcube}{\mathcal{T}}
+\newcommand{\radius}{r}
+\newcommand{\packing}{\mathcal{N}}
+\newcommand{\pack}{\hat{V}}
+\newcommand{\cover}{\mathcal{M}}
+\newcommand{\coverset}{\hat{V}}
+\newcommand{\voronoi}{V}
+\newcommand{\vorsize}{N}
+\newcommand{\vorsample}{A}
+\newcommand{\ball}{T}
+\newcommand{\dradius}{\theta}
+\newcommand{\err}{\operatorname{err}}
+\newcommand{\reg}{\eta}
+\newcommand{\diam}[1]{diam\left(#1\right)}
+\newcommand{\cubes}{m}
+\newcommand{\cubesize}{r}
+\newcommand{\ourdomain}{[0,1]}
+\newcommand{\remove}[1]{}
+\newcommand{\metric}{\rho}
+\newcommand{\point}{p}
+\newcommand{\expddim}{\lambda}
+\newcommand{\ddim}{ddim}
+\newcommand{\Ldim}[1]{Ldim(#1)}
+\newcommand{\e}{e}
+\newcommand{\dist}[2]{\metric(#1,#2)}
+
+\newcommand{\distH}[2]{d_H(#1,#2)}
+\newcommand{\IP}{\mathcal{A}}
+\newcommand{\Lap}{\mathrm{Lap}}
+\newcommand{\errD}[1]{\mathrm{err}_{\measure}(#1)}
+\newcommand{\errS}[2]{\mathrm{err}_{#2}(#1)}
+\newcommand{\complexity}{m}
+\newcommand{\vc}[1]{d_{#1}}
+\newcommand{\ASample}[2]{IP_{#1}\left(#2\right)}
+\newcommand{\AMean}[2]{\mu_{#1}(#2)}
+\newcommand{\OurSample}[2]{n_{#1}(#2)}
+\newcommand{\var}{2\Delta}
+\newcommand{\inner}[1]{D_{#1}}
+\newcommand{\bigdelta}{\tilde{\delta}}
+\newcommand{\bigeps}{\tilde{\varepsilon}}
+\newcommand{\leps}{\varepsilon'}
+\newcommand{\ldelta}{\delta'}
+\newcommand{\lbeta}{\beta'}
+\newcommand{\AzumaA}{\gamma}
+\newcommand{\AzumaB}{\lambda}
+\newcommand{\logstar}[1]{\log^*\left(#1\right)}
+\newcommand{\num}[2]{ind_{#1}(#2)}
+\newcommand{\event}[1]{\mathcal{I}_{#1}}
+\newcommand{\blackbox}{\mathcal{B}}
+\newcommand{\subs}{\mathcal{I}}
+\newcommand{\epsset}{R}
+\newcommand{\RandMargin}{\mathcal{RM}}
+\newcommand{\indicator}[1]{\mathbbm{1}_{#1}}
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+\newcommand{\dualvc}[1]{d^*_{#1}}
+\newcommand{\fat}[2]{Fat_{#1}\left(#2\right)}
+\newcommand{\dualfat}[2]{Fat^*_{#1}\left(#2\right)}
+
+\newenvironment{dedication}
+  {%
+   \thispagestyle{empty}%
+   \vspace*{\stretch{0.5}}%
+   \itshape             %
+  }
+  {\par %
+   \vspace{\stretch{15}} %
+   \clearpage           %
+  }

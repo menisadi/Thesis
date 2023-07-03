@@ -1,0 +1,22 @@
+# Tasks derived from Judge 2's comments
+- [x] Explain that my contribution to all of the papers, especially the last one, was significant.
+- [ ] Add more explanation and background on both learning and privacy.
+- [ ] Remove formal theorems from the introduction and simplify my contribution.
+- [ ] Make the literature review more coherent and add a broader context.
+- [ ] Strengthen the preliminaries so it will "walk the reader through the significant results needed to understand the rest of the thesis".
+- [ ] Add conclusion chapter.
+- [ ] Fix the sections and sub-sections numbering.
+- [ ] Fix the questions numbering.
+- [ ] Make sure I don't use term before they are defined.
+- [ ] Explain the difference between $X$ and $\mathcal{X}$.
+- [ ] Make theorem 1.7.5 more informal.
+- [ ] Give examples for important concepts:
+    - [ ] VC-dimension
+    - [ ] Fat-Shattering dimension
+    - [ ] Anything else?
+- [ ]. Provide high-level explanation to all pseudo-codes:
+    - [ ] MedBoost
+    - [ ] What else?
+- [ ] Provide high-level explanation to important concepts:
+    - [ ] Axis-aligned rectangles
+    - [ ] What else?

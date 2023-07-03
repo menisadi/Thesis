@@ -1,0 +1,50 @@
+\chapter{Introduction}
+
+Machine learning is an interdisciplinary field that combines statistics and algorithm design to leverage information and develop systems capable of performing diverse tasks.
+
+The field of machine learning has witnessed significant growth in recent years, with applications ranging from medical test analysis and chatbots to automatic art generation and autonomous vehicles. Both applied and research efforts in the field focus on constructing sophisticated models and developing new tools to achieve further advancements. Simultaneously, there is a strong interest in understanding the limitations and possibilities of these models and tools in various contexts. To facilitate systematic and meticulous research, it is essential to establish a precise mathematical framework that defines the situations and challenges we encounter.
+
+The fundamental question we address is "What is learning?" or, more specifically, "What requirements must an algorithm meet to be considered a learning algorithm?" While the intuition suggests that a learning algorithm should improve as it receives more information, we need to precisely define the concept of "improvement" and the specific situations in which the algorithm operates. This necessitates a well-defined framework. Moreover, we need to determine which problems or situations are learnable and which are not—an intricate question that demands multiple tools for thorough investigation.
+
+Occam's Razor, a renowned principle in learning theory and inference, traces its origins back to Aristotle's writings two thousand years ago. It suggests that a theory or pattern deduced from data is considered "good" if it is simple and involves fewer postulates or hypotheses. William of Ockham later popularized this principle with the phrase "Plurality should not be posited without necessity." If we aim to measure simplicity more precisely, one possible approach is to consider the explanation length, i.e., the shorter the explanation, the better. From a computer science perspective, a system exhibiting a pattern or regularity can compress and describe its results more concisely than explicitly specifying the results themselves. This observation highlights the deep connection between compression and learning, as evidenced by theories and results in the field of statistical learning.
+
+To explore this connection effectively, it is crucial to establish clear definitions of learning and compression. Over the years, several notions of learning have been proposed in the learning theory field to capture its characteristics. One prominent notion is Probably Approximately Correct (PAC) learning, which informally describes an algorithm that, given data, outputs a hypothesis that accurately predicts the label of most newly sampled data points with high probability.
+
+A key problem in learning theory is characterizing the sample complexity, which refers to the amount of data required to ensure PAC-learning for a given class of functions. It is known that the sample complexity of learning a class of binary functions is proportional to its VC dimension (to be defined in Definition~\ref{def:vc-dimension}). For classes of real-valued functions, a similar result has been established using the concept of Fat-Shattering dimension. However, various other notions of "learnability" have proven to be useful and insightful. One such notion is the idea of compression.
+
+\section{Compression}
+
+As machine learning algorithms continue to advance, data labeling compression has emerged as a common aspect in many of these algorithms. The principle of finding representative subsets of data as part of the Occam learning paradigm lies at the core of these algorithms. Notably, the Support Vector Machine (SVM) algorithm derives its name from the set of supporting vectors that define the linear separator returned by the algorithm \citep{cortes1995support}.
+
+The concept of sample compression schemes in learning theory was formalized by \citet{littlestone1986relating}, who established a framework for discussing these schemes from a learning perspective. They also showed that compression implies learnability for binary-labeled classes\footnote{Recently, there has been growing interest in studying the properties and generalization bounds of compression-based learning algorithms, as seen in works such as \citet{gkn-aistats16, DBLP:journals/ml/GraepelHS05, cummings2016adaptive}}.
+
+An intriguing question posed by \citet{littlestone1986relating} was whether every learner could be converted into a sample compression scheme. In other words, does every learnable class admit a constant-size sample compression scheme? Several partial results were obtained in subsequent works \citep{floyd1989space,helmbold1992learning,DBLP:journals/ml/FloydW95,ben1998combinatorial,DBLP:journals/jmlr/KuzminW07,DBLP:journals/jcss/RubinsteinBR09,DBLP:journals/jmlr/RubinsteinR12,MR3047077,livni2013honest,moran2017teaching}, leading up to the resolution of this question by \citet{moran2016sample}\footnote{The refined conjecture of \citet{littlestone1986relating}, which states that any concept class $\class$ with VC-dimension $\vc{\class}$ admits a compression scheme of size $\bigO{\vc{\class}}$, remains open}.
+
+The significance of this link between compression and learning lies in the fact that learning is a statistical notion, while compression is combinatorial. Establishing an equivalence between the two allows researchers to approach learning questions from a combinatorial perspective, opening up new avenues of research and leveraging a wide range of tools.
+
+While the connection between compression and learnability has been explored in various settings and regimes, such as adversarial learning \citep{DBLP:conf/colt/MontasserHS19} and parametric distribution learning \citep{ashtiani2020near}, the reverse direction of converting learning algorithms and learnable problems into compression schemes has received less attention. Moreover, the existing studies have predominantly focused on the binary case, leaving natural extensions and variations unexplored. Additionally, the tools used to attack and solve the conjecture appear to rely on the binary nature of the problem. Therefore, the aim of this part of the thesis is to investigate the equivalence between learning and compression definitions in the context of regression problems.
+
+\subsection{Our Contribution}
+
+Our primary contribution is the extension of the fundamental result of \citet{moran2016sample} that relates compression and learning to the case of real-valued function classes. We begin by providing an algorithmically efficient version of the learner-to-compression scheme conversion presented in \citet{moran2016sample}:
+
+\begin{theorem}[Efficient compression for classification, informal]
+\label{thm:classification}
+Let $\class$ be a concept class over an instance space $\domain$ with VC-dimension $\vc{\class}$ and VC-dimension $\dualvc{\class}$. Suppose $\calA$ is a proper PAC-learner for $\class$. We show the existence of a randomized sample compression scheme for $\class$ of size $O(k\log k)$, where $k=O(\vc{\class}\dualvc{\class})$. Moreover, the compression set can be computed in expected time $\bigO{m\log m}$ for a sample of any size $m$. This result improves upon the naive implementation of the existence proof in \citet{moran2016sample}, which has a runtime of $m^{c\vc{\class}} + m^{c\dualvc{\class}}$ without considering the cost of computing the minimax distribution on the $m^{c\vc{\class}}\times m$ game matrix.
+
+Building upon the result for classification, we extend it to regression problems:
+
+\begin{theorem}[Efficient compression for regression, informal]
+\label{thm:regression}
+Let $\F\subset[0,1]^\domain$ be a function class with $t$-fat-shattering dimension $\fat{t}{\F}$ and dual $t$-fat-shattering dimension $\dualfat{t}{\F}$. Suppose $\calA$ is an ERM (Empirical Risk Minimization) learner for $\F$. We demonstrate the existence of a randomized uniformly $\eps$-approximate sample compression scheme for $\F$ of size $\bigO{k\tilde{m} \log(k \tilde{m})}$, where $\tilde m = \mathcal{O}\big( \fat{c\eps}{\F} \log(1/\eps) \big)$ and $k = \mathcal{O}\big(\dualfat{c\eps}{\F}\log(\dualfat{c\eps}{\F}/\eps)\big)$. Additionally, the compression set can be computed in expected time $\bigO{m \log(m) + k}$ for a sample of any size $m$.
+
+A key component of our result is the construction of a generic $(\dev,\adv)$-weak learner. We define an $(\dev,\adv)$-weak hypothesis as a function $f:\domain\to\R$ that satisfies $\Pr_{X\sim D}(|f(X)-f^(X)|>\dev)\le \frac12-\adv$. We prove the existence of such weak hypotheses for a given function class $\F$, distribution $D$, target function $f^\in\F$, and parameters $\dev$, $\delta$, and $\adv$.
+
+Our results not only provide insights into an open question by \citet{DBLP:journals/siamcomp/Simon97} but also have implications for other areas such as robust learning \citep{pmlr-v99-montasser19a}. To demonstrate the efficacy of our results, we apply them to two regression problems: learning Lipschitz functions and learning bounded-variation functions.
+
+In recent years, trustworthy machine learning has gained significant attention, encompassing various aspects such as robust learning, fairness, and privacy. Compression schemes play a crucial role in privacy-preserving learning, highlighting the divergence between classical learning theory and learning under privacy concerns. Our work in this chapter, conducted in collaboration with Steve Hanneke and Aryeh Kontorovich (ALT \citeyear{pmlr-v98-hanneke19a}), contributes to the exploration of these concepts and their applications in learning theory.
+
+
+
+
+
