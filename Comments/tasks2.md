@@ -14,7 +14,7 @@
     - [ ] VC-dimension
     - [ ] Fat-Shattering dimension
     - [ ] Anything else?
-- [ ]. Provide high-level explanation to all pseudo-codes:
+- [ ] Provide high-level explanation to all pseudo-codes:
     - [ ] MedBoost
     - [ ] What else?
 - [ ] Provide high-level explanation to important concepts:
