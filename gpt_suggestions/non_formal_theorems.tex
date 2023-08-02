@@ -25,9 +25,51 @@ While the standard notion is defined in therms of average error, Simon's definit
 This is a stronger requirement, and is necessary for our construction.
 Using Simon's definition, we show that a weak-learner can be constructed for every function class with bounded fat-shattering dimension.
 
+\paragraph{definition 1.3.1}
+% dp definition. This is important and hence will remain formal. 
+% we just neeed to explain this in the report.
+
 \paragraph{theorem 1.4.1}
 % for this theorem we can simply remove the theorem enviroment and keep all the text.
 
 \paragraph{theorem 1.5.1}
 % for this theorem we can simply remove the theorem enviroment and keep all the text.
 
+\paragraph{definition 1.5.3}
+% Universal consistent density estimation
+% make sure we explain propely the concept of universal consistency.
+That is, we seek a differentially private algorithm which upon receiving a sample,
+outputs a density function which should be close to the true uknown density function
+from which the sample was drawn.
+We say that an algorithm is universal consistent if the \emph{Total Variation distance}
+between the output density and the true density converges to zero as the sample size grows to infinity.
+
+\paragraph{theorem 1.5.4}
+Our result is a universal consistent differentially private algorithm for density estimation 
+for which $\delta$ decays exponentially in the sample size. 
+
+\paragraph{theorem 1.7.1}
+% Gibbs dipendency definition. Will keep this formal. 
+% we just neeed to explain this in the report.
+
+\paragraph{theorem 1.7.2}
+% This can be simply removed from the introduction.
+% just need to put it somewhere else and also midify the remark 1.7.3
+
+\paragraph{corollary 1.7.4}
+By applying our result with a known DP mechanism for answering queries while providing empirical accuracy, 
+we are able to provide a computationally efficient mechanism for answering adaptive queries for the case of non-zero dependencies,
+which sample complexity depends in the Gibbs dependency of the query class. 
+Our result, again, generalizes the state-of-the-art bounds for the i.i.d. setting, where $\mixing = 0$.
+
+\paragraph{theorem 1.7.5}
+Using this definition we prove that there exists sts a computationally efficient mechanism for answering adaptive queries, 
+even for the case of non-zero dependencies, which error scales with $\gamma$.
+In particular, as long as the adversary poses queries $q_i$ such that $\gamma(qi,μ,δ) ≤ α$, 
+our mechanism guarantees that all of its answers are 2α-accurate, with hight probability.
+The caveat here is that for the probability to be high we must ensure that $\delta$ decays fast enough with the number of queries at hand.
+This is easily obtained in many settings of interest by taking the sample size n to be big enough. 
+For example, for sub-Gaussian or sub-exponential queries, we would get that $\delta$ vanishes exponentially with n, 
+and hence, for large enough n we would get the desired result
+
+.
