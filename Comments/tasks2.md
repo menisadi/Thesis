@@ -1,10 +1,10 @@
 # Tasks derived from Judge 2's comments
 - [x] Explain that my contribution to all of the papers, especially the last one, was significant.
-- [ ] Add more explanation and background on both learning and privacy.
+- [x] Add more explanation and background on both learning and privacy.
 - [x] Remove formal theorems from the introduction and simplify my contribution.
 - [ ] Make the literature review more coherent and add a broader context.
-- [ ] Strengthen the preliminaries so it will "walk the reader through the significant results needed to understand the rest of the thesis".
-- [ ] Add conclusion chapter.
+- [x] Strengthen the preliminaries so it will "walk the reader through the significant results needed to understand the rest of the thesis".
+- [x] Add conclusion chapter.
 - [ ] Fix the sections and sub-sections numbering.
 - [ ] Fix the questions numbering.
 - [ ] Make sure I don't use term before they are defined.

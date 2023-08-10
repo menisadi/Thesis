@@ -1006,6 +1006,9 @@ and referred to as the \emph{dual VC dimension}.
 \citet{MR723955} showed that 
 $\dualvc{\class} \leq 2^{\vc{\class}+1}$.
 
+Intuitively, the VC-dimension of a class captures its complexity,
+by measuring the number of points that can be separated by the class' functions.
+
 The main result that emerged from the VC-theory is that, in classes with a finite VC-dimension, it is possible to bound, with high probability,  the gap between the empirical risk and the true risk of the classifier, also known as the generalization gap, meaning that such classes are PAC-learnable.
 
 
@@ -1050,6 +1053,8 @@ $\dualfat{t}{\F}$.
 \footnote{It was proven by \citet{DBLP:journals/corr/abs-2108-10037} that it is impossible to obtain general bounds on the dual-fat-shattering dimension, similar to the one proven by \citet{MR723955} for VC-dimension. 
 Nevertheless, bounds do exist for some natural classes. To demonstrate this, in Section~\ref{sec:examples} we prove such bounds for the dual class of two fundamental classes: Lipschitz functions and bounded-variation functions.}
 \end{definition}
+
+Understanding the PAC model, the VC dimension and its extensions is essential as they provide theoretical frameworks for assessing the generalization performance of machine learning algorithms. These concepts serve as building blocks for the development of efficient learning algorithms with provable guarantees.
 
 \subsection{Compression Schemes}
 
@@ -2476,7 +2481,7 @@ We now prove our estimate on the dual fat-shattering dimension of $\F$:
 \begin{lemma}
   For $\F=\F_L$,
   $\dualfat{t}{\F}
-  \leq \log_2\left(\mathcal{M}(\mathcal{X},2\gammat/L)\right)$.
+  \leq \log_2\left(\mathcal{M}(\xathcal{X},2\gammat/L)\right)$.
 \end{lemma}
 \begin{proof}
   Let $\set{f_1,\ldots,f_n}\subset \F_L$ a set that is $\gammat$-shattered by $\F^*_L$.
