@@ -8,3 +8,7 @@ The procdure keeps sampling until it finds a subset s.t. most of the hypotheses 
 \paragraph{PCL2}
 Consider Algorithm~\ref{alg:pcl2}, which is an extension of the PCL algorithm.
 The algorithm partition the space to Voronoi cells centered in the points coresponding to a maximal packing. The outputed classifier is then defined as the noisy majority vote for the cell. 
+
+\paragraph{PCDE}
+The algorithm make use of the \emph{Stability based Histogram} algorithm in order to produce counting estimates while preserving privacy.
+It then defines the estimator to be the estimated count normalized with respect to the sample size and the partition-cubes' size.
