@@ -1,2 +1,10 @@
 \paragraph{MedBoost}
 Intuitively, the MedBoost algorithm uses the weak learner in order iteratively produce weak hypotheses. It maintains a distribution on the initial sample which adaptivly gives more wieght to hard data points, enabeling it to focus on those problematic points. Finally it assigins weight to each learner according to its preformence. We can then use the series of learners and weights in order to construct a single strong hypothesis by taking the weighted median or the weighted quantile. 
+
+\paragraph{Sparsify}
+The Sparsify procedure samples a subset of the hypotheses produced by the MedBoost algorithm with probability which is proportional to the outputed weight coresponding to each hypothesis.
+The procdure keeps sampling until it finds a subset s.t. most of the hypotheses in the subset have low empricial error (with respect to the points in the sample).
+
+\paragraph{PCL2}
+Consider Algorithm~\ref{alg:pcl2}, which is an extension of the PCL algorithm.
+The algorithm partition the space to Voronoi cells centered in the points coresponding to a maximal packing. The outputed classifier is then defined as the noisy majority vote for the cell. 
