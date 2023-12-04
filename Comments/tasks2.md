@@ -5,18 +5,17 @@
 - [ ] Make the literature review more coherent and add a broader context.
 - [x] Strengthen the preliminaries so it will "walk the reader through the significant results needed to understand the rest of the thesis".
 - [x] Add conclusion chapter.
-- [ ] Fix the sections and sub-sections numbering.
-- [ ] Fix the questions numbering.
+- [x] Fix the sections and sub-sections numbering.
+- [x] Fix the questions numbering.
 - [ ] Make sure I don't use term before they are defined.
-- [ ] Explain the difference between $X$ and $\mathcal{X}$.
-- [ ] Make theorem 1.7.5 more informal.
-- [ ] Give examples for important concepts:
-    - [ ] VC-dimension
-    - [ ] Fat-Shattering dimension
-    - [ ] Anything else?
-- [ ] Provide high-level explanation to all pseudo-codes:
-    - [ ] MedBoost
-    - [ ] What else?
-- [ ] Provide high-level explanation to important concepts:
-    - [ ] Axis-aligned rectangles
-    - [ ] What else?
+- [x] Explain the difference between $X$ and $\mathcal{X}$.
+- [x] Make theorem 1.7.5 more informal.
+- [x] Give examples for important concepts:
+    - [x] VC-dimension
+    - [x] Fat-Shattering dimension
+- [x] Provide high-level explanation to all pseudo-codes:
+    - [x] MedBoost
+    - [x] PCL2
+    - [x] PCDE
+- [x] Provide high-level explanation to important concepts:
+    - [x] Axis-aligned rectangles
